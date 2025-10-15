@@ -136,22 +136,28 @@ onUnmounted(() => {
   font-size: 1.8rem;
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  color: #f4d03f;
-  text-shadow: 0 0 12px rgba(244, 208, 63, 0.6);
+  color: #d4af37;
+  text-shadow:
+    0 0 10px rgba(212, 175, 55, 0.8),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
   margin: 0;
-  animation: goldenPulse 3s ease-in-out infinite alternate;
+  animation: darkSoulsPulse 4s ease-in-out infinite alternate;
   letter-spacing: 1px;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
-@keyframes goldenPulse {
+@keyframes darkSoulsPulse {
   from {
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    text-shadow:
+      0 0 10px rgba(212, 175, 55, 0.8),
+      2px 2px 4px rgba(0, 0, 0, 0.8);
   }
   to {
     text-shadow:
-      0 0 25px rgba(212, 175, 55, 0.8),
-      0 0 35px rgba(212, 175, 55, 0.4);
+      0 0 15px rgba(212, 175, 55, 1),
+      0 0 25px rgba(212, 175, 55, 0.6),
+      3px 3px 6px rgba(0, 0, 0, 0.9);
   }
 }
 
@@ -165,32 +171,39 @@ onUnmounted(() => {
 
 .nav-link {
   text-decoration: none;
-  color: #e6d7a3;
-  font-family: 'Cinzel', serif;
+  color: #c9aa6c;
+  font-family: 'MedievalSharp', cursive;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   transition: all 0.4s ease;
   position: relative;
   padding: 1rem 1.8rem;
   border: 1px solid transparent;
-  text-shadow: 0 0 6px rgba(230, 215, 163, 0.5);
-  letter-spacing: 0.5px;
-  border-radius: 8px;
+  text-shadow:
+    0 0 6px rgba(201, 170, 108, 0.7),
+    1px 1px 2px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
+  border-radius: 0;
+  text-transform: uppercase;
 }
 
 .nav-link:hover {
   color: #d4af37;
-  text-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
-  border: 1px solid #d4af37;
-  background: rgba(212, 175, 55, 0.1);
+  text-shadow:
+    0 0 10px rgba(212, 175, 55, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  border: 2px solid #8b4513;
+  background: rgba(139, 69, 19, 0.2);
   transform: translateY(-2px);
 }
 
 .nav-link.active {
   color: #f4d03f;
-  text-shadow: 0 0 15px rgba(244, 208, 63, 0.8);
-  border: 1px solid #f4d03f;
-  background: rgba(244, 208, 63, 0.1);
+  text-shadow:
+    0 0 12px rgba(244, 208, 63, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  border: 2px solid #d4af37;
+  background: rgba(212, 175, 55, 0.2);
 }
 
 .nav-link.active::after {

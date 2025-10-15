@@ -147,6 +147,8 @@ onMounted(() => {
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;500;600;700&family=Uncial+Antiqua&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -189,32 +191,32 @@ section {
   padding: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
-
 html {
   scroll-behavior: smooth;
+  background: linear-gradient(
+    135deg,
+    #0a0a0a 0%,
+    #1a1612 25%,
+    #2d1b0f 50%,
+    #1a1612 75%,
+    #0a0a0a 100%
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
 }
 
 body {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'MedievalSharp', cursive;
   line-height: 1.8;
-  color: #e6d7a3;
-  background: linear-gradient(
-    135deg,
-    #0c0c0c 0%,
-    #1a1a1a 25%,
-    #2d1b1b 50%,
-    #1a1a1a 75%,
-    #0c0c0c 100%
-  );
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(139, 69, 19, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(184, 134, 11, 0.03) 0%, transparent 50%);
-  background-attachment: fixed;
+  color: #c9aa6c;
+  background: transparent;
   overflow-x: hidden;
   min-height: 100vh;
   font-size: 16px;
+  text-shadow: 0 0 3px rgba(201, 170, 108, 0.3);
 }
 
 #app {
@@ -247,14 +249,6 @@ section {
   width: 100%;
   max-width: none;
   padding: 120px 40px 80px;
-  background: linear-gradient(
-    135deg,
-    #0c0c0c 0%,
-    #1a1a1a 25%,
-    #2d1b1b 50%,
-    #1a1a1a 75%,
-    #0c0c0c 100%
-  );
   position: relative;
   overflow: hidden;
   margin: 0;
@@ -296,14 +290,16 @@ section {
   font-family: 'Cinzel', serif;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #f4d03f;
+  color: #d4af37;
   text-shadow:
-    0 0 15px rgba(244, 208, 63, 0.6),
-    0 0 30px rgba(244, 208, 63, 0.4),
-    0 0 45px rgba(244, 208, 63, 0.2);
-  animation: goldenGlow 3s ease-in-out infinite alternate;
+    0 0 10px rgba(212, 175, 55, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.6),
+    0 0 30px rgba(212, 175, 55, 0.4),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  animation: darkSoulsGlow 4s ease-in-out infinite alternate;
   letter-spacing: 1px;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .typing-text {
@@ -344,38 +340,46 @@ section {
 
 .hero-content h2 {
   font-size: 1.6rem;
-  font-family: 'Cinzel', serif;
-  font-weight: 500;
-  color: #e6d7a3;
+  font-family: 'MedievalSharp', cursive;
+  font-weight: 400;
+  color: #c9aa6c;
   margin-bottom: 2rem;
-  text-shadow: 0 0 8px rgba(230, 215, 163, 0.5);
-  letter-spacing: 0.5px;
+  text-shadow:
+    0 0 6px rgba(201, 170, 108, 0.7),
+    1px 1px 2px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
   line-height: 1.3;
+  font-style: italic;
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  font-family: 'Cormorant Garamond', serif;
-  color: #d4af37;
+  font-family: 'MedievalSharp', cursive;
+  color: #b8860b;
   margin-bottom: 3rem;
   line-height: 1.8;
-  text-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+  text-shadow:
+    0 0 4px rgba(184, 134, 11, 0.6),
+    1px 1px 2px rgba(0, 0, 0, 0.5);
   font-style: italic;
   max-width: 500px;
+  letter-spacing: 0.5px;
 }
 
-@keyframes goldenGlow {
+@keyframes darkSoulsGlow {
   from {
     text-shadow:
-      0 0 20px rgba(212, 175, 55, 0.5),
-      0 0 40px rgba(212, 175, 55, 0.3),
-      0 0 60px rgba(212, 175, 55, 0.1);
+      0 0 10px rgba(212, 175, 55, 0.8),
+      0 0 20px rgba(212, 175, 55, 0.6),
+      0 0 30px rgba(212, 175, 55, 0.4),
+      2px 2px 4px rgba(0, 0, 0, 0.8);
   }
   to {
     text-shadow:
-      0 0 30px rgba(212, 175, 55, 0.7),
-      0 0 50px rgba(212, 175, 55, 0.5),
-      0 0 70px rgba(212, 175, 55, 0.2);
+      0 0 15px rgba(212, 175, 55, 1),
+      0 0 30px rgba(212, 175, 55, 0.8),
+      0 0 45px rgba(212, 175, 55, 0.6),
+      3px 3px 6px rgba(0, 0, 0, 0.9);
   }
 }
 
@@ -387,26 +391,30 @@ section {
 
 .btn {
   padding: 20px 40px;
-  border: 2px solid #d4af37;
-  border-radius: 8px;
+  border: 3px solid #8b4513;
+  border-radius: 0;
   font-size: 1.1rem;
-  font-family: 'Cinzel', serif;
-  font-weight: 600;
+  font-family: 'MedievalSharp', cursive;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.4s ease;
   text-decoration: none;
   display: inline-block;
   text-align: center;
   position: relative;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(184, 134, 11, 0.08) 100%);
-  color: #f4d03f;
-  text-shadow: 0 0 8px rgba(244, 208, 63, 0.6);
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.2) 0%, rgba(101, 67, 33, 0.1) 100%);
+  color: #d4af37;
+  text-shadow:
+    0 0 6px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.6);
   box-shadow:
-    0 4px 15px rgba(212, 175, 55, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  letter-spacing: 0.5px;
+    0 6px 20px rgba(139, 69, 19, 0.4),
+    inset 0 1px 0 rgba(212, 175, 55, 0.3);
+  letter-spacing: 1px;
   overflow: hidden;
   min-width: 180px;
+  text-transform: uppercase;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
 }
 
 .btn::before {
@@ -425,37 +433,45 @@ section {
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(184, 134, 11, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.3) 0%, rgba(101, 67, 33, 0.2) 100%);
   color: #f4d03f;
-  text-shadow: 0 0 15px rgba(244, 208, 63, 0.8);
+  text-shadow:
+    0 0 10px rgba(244, 208, 63, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
   box-shadow:
-    0 6px 25px rgba(212, 175, 55, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transform: translateY(-3px);
-  border-color: #f4d03f;
+    0 8px 30px rgba(139, 69, 19, 0.6),
+    inset 0 1px 0 rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+  border-color: #d4af37;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
-  color: #0c0c0c;
-  text-shadow: none;
+  background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
+  color: #d4af37;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.9),
+    1px 1px 2px rgba(0, 0, 0, 0.7);
   box-shadow:
-    0 4px 15px rgba(212, 175, 55, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 6px 20px rgba(139, 69, 19, 0.5),
+    inset 0 1px 0 rgba(212, 175, 55, 0.4);
+  border-color: #654321;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
-  color: #0c0c0c;
+  background: linear-gradient(135deg, #a0522d 0%, #8b4513 100%);
+  color: #f4d03f;
+  text-shadow:
+    0 0 12px rgba(244, 208, 63, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
   box-shadow:
-    0 6px 25px rgba(244, 208, 63, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    0 8px 30px rgba(160, 82, 45, 0.7),
+    inset 0 1px 0 rgba(212, 175, 55, 0.5);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #d4af37;
-  border-color: #d4af37;
+  color: #8b4513;
+  border-color: #8b4513;
 }
 
 .hero-image {

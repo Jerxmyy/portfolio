@@ -265,14 +265,6 @@ const submitForm = async () => {
 
 <style scoped>
 .contact {
-  background: linear-gradient(
-    135deg,
-    #0c0c0c 0%,
-    #1a1a1a 25%,
-    #2d1b1b 50%,
-    #1a1a1a 75%,
-    #0c0c0c 100%
-  );
   padding: 100px 40px;
   position: relative;
   overflow: hidden;
@@ -314,23 +306,31 @@ const submitForm = async () => {
   font-size: 2.5rem;
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  color: #f4d03f;
-  text-shadow: 0 0 15px rgba(244, 208, 63, 0.6);
+  color: #d4af37;
+  text-shadow:
+    0 0 10px rgba(212, 175, 55, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.6),
+    0 0 30px rgba(212, 175, 55, 0.4),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
   margin-bottom: 1.5rem;
-  animation: goldenGlow 3s ease-in-out infinite alternate;
+  animation: darkSoulsGlow 4s ease-in-out infinite alternate;
   letter-spacing: 1px;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .section-header p {
   font-size: 1.3rem;
-  color: #e6d7a3;
+  color: #c9aa6c;
   max-width: 700px;
   margin: 0 auto;
-  text-shadow: 0 0 6px rgba(230, 215, 163, 0.5);
-  font-family: 'Cormorant Garamond', serif;
+  text-shadow:
+    0 0 6px rgba(201, 170, 108, 0.7),
+    1px 1px 2px rgba(0, 0, 0, 0.6);
+  font-family: 'MedievalSharp', cursive;
   font-style: italic;
   line-height: 1.6;
+  letter-spacing: 0.5px;
 }
 
 .contact-content {
@@ -342,15 +342,29 @@ const submitForm = async () => {
 
 .contact-info h3 {
   font-size: 1.8rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: #d4af37;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .contact-info p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #666;
+  color: #c9aa6c;
   margin-bottom: 2rem;
+  font-family: 'MedievalSharp', cursive;
+  text-shadow:
+    0 0 4px rgba(201, 170, 108, 0.6),
+    1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  letter-spacing: 0.5px;
 }
 
 .contact-methods {
@@ -382,15 +396,23 @@ const submitForm = async () => {
   font-family: 'Cinzel', serif;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #f4d03f;
-  text-shadow: 0 0 8px rgba(244, 208, 63, 0.6);
+  color: #d4af37;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .contact-details p {
-  color: #e6d7a3;
+  color: #c9aa6c;
   margin: 0 0 0.8rem 0;
   font-size: 1rem;
-  text-shadow: 0 0 6px rgba(230, 215, 163, 0.4);
+  font-family: 'MedievalSharp', cursive;
+  text-shadow:
+    0 0 4px rgba(201, 170, 108, 0.6),
+    1px 1px 2px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
 }
 
 .social-links h4 {
@@ -398,8 +420,12 @@ const submitForm = async () => {
   font-family: 'Cinzel', serif;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #f4d03f;
-  text-shadow: 0 0 8px rgba(244, 208, 63, 0.6);
+  color: #d4af37;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .social-icons {
@@ -412,20 +438,30 @@ const submitForm = async () => {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.2) 0%, rgba(101, 67, 33, 0.1) 100%);
   color: #d4af37;
   text-decoration: none;
-  border-radius: 25px;
-  font-weight: 500;
+  border-radius: 0;
+  font-family: 'MedievalSharp', cursive;
+  font-weight: 400;
   transition: all 0.3s ease;
-  border: 1px solid #d4af37;
+  border: 2px solid #8b4513;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow:
+    0 0 6px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .social-link:hover {
-  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
-  color: #0c0c0c;
+  background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
+  color: #f4d03f;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.5);
+  text-shadow:
+    0 0 10px rgba(244, 208, 63, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  border-color: #d4af37;
 }
 
 .contact-form-container {
@@ -448,33 +484,44 @@ const submitForm = async () => {
 }
 
 .form-group label {
+  font-family: 'Cinzel', serif;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #d4af37;
+  text-shadow:
+    0 0 6px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .form-group input,
 .form-group textarea {
   padding: 1.2rem;
-  border: 2px solid #d4af37;
-  border-radius: 8px;
+  border: 2px solid #8b4513;
+  border-radius: 0;
   font-size: 1.1rem;
   transition: all 0.3s ease;
   background: rgba(12, 12, 12, 0.9);
-  color: #e6d7a3;
-  font-family: 'Cormorant Garamond', serif;
-  text-shadow: 0 0 6px rgba(230, 215, 163, 0.5);
+  color: #c9aa6c;
+  font-family: 'MedievalSharp', cursive;
+  text-shadow:
+    0 0 4px rgba(201, 170, 108, 0.6),
+    1px 1px 2px rgba(0, 0, 0, 0.5);
   line-height: 1.6;
+  letter-spacing: 0.5px;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #f4d03f;
-  box-shadow: 0 0 20px rgba(244, 208, 63, 0.4);
+  border-color: #d4af37;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
   background: rgba(12, 12, 12, 0.95);
-  color: #f4d03f;
-  text-shadow: 0 0 10px rgba(244, 208, 63, 0.7);
+  color: #d4af37;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .form-group input.error,
@@ -545,6 +592,21 @@ const submitForm = async () => {
 
   .section-header h2 {
     font-size: 2rem;
+  }
+}
+
+@keyframes darkSoulsGlow {
+  from {
+    text-shadow:
+      0 0 10px rgba(212, 175, 55, 0.8),
+      0 0 20px rgba(212, 175, 55, 0.6),
+      2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  to {
+    text-shadow:
+      0 0 15px rgba(212, 175, 55, 1),
+      0 0 30px rgba(212, 175, 55, 0.8),
+      3px 3px 6px rgba(0, 0, 0, 0.9);
   }
 }
 </style>

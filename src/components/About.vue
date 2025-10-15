@@ -94,14 +94,6 @@
 
 <style scoped>
 .about {
-  background: linear-gradient(
-    135deg,
-    #0c0c0c 0%,
-    #1a1a1a 25%,
-    #2d1b1b 50%,
-    #1a1a1a 75%,
-    #0c0c0c 100%
-  );
   padding: 100px 40px;
   position: relative;
   overflow: hidden;
@@ -143,23 +135,31 @@
   font-size: 2.5rem;
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  color: #f4d03f;
-  text-shadow: 0 0 15px rgba(244, 208, 63, 0.6);
+  color: #d4af37;
+  text-shadow:
+    0 0 10px rgba(212, 175, 55, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.6),
+    0 0 30px rgba(212, 175, 55, 0.4),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
   margin-bottom: 1.5rem;
-  animation: goldenGlow 3s ease-in-out infinite alternate;
+  animation: darkSoulsGlow 4s ease-in-out infinite alternate;
   letter-spacing: 1px;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .section-header p {
   font-size: 1.3rem;
-  color: #e6d7a3;
+  color: #c9aa6c;
   max-width: 700px;
   margin: 0 auto;
-  text-shadow: 0 0 6px rgba(230, 215, 163, 0.5);
-  font-family: 'Cormorant Garamond', serif;
+  text-shadow:
+    0 0 6px rgba(201, 170, 108, 0.7),
+    1px 1px 2px rgba(0, 0, 0, 0.6);
+  font-family: 'MedievalSharp', cursive;
   font-style: italic;
   line-height: 1.6;
+  letter-spacing: 0.5px;
 }
 
 .about-content {
@@ -174,20 +174,26 @@
   font-family: 'Cinzel', serif;
   font-weight: 600;
   margin-bottom: 2rem;
-  color: #f4d03f;
-  text-shadow: 0 0 12px rgba(244, 208, 63, 0.6);
+  color: #d4af37;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.7);
   letter-spacing: 0.5px;
   line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .about-intro p {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #e6d7a3;
+  color: #c9aa6c;
   margin-bottom: 2rem;
-  font-family: 'Cormorant Garamond', serif;
-  text-shadow: 0 0 6px rgba(230, 215, 163, 0.4);
+  font-family: 'MedievalSharp', cursive;
+  text-shadow:
+    0 0 4px rgba(201, 170, 108, 0.6),
+    1px 1px 2px rgba(0, 0, 0, 0.5);
   font-style: italic;
+  letter-spacing: 0.5px;
 }
 
 .skills {
@@ -199,10 +205,13 @@
   font-family: 'Cinzel', serif;
   font-weight: 600;
   margin-bottom: 2rem;
-  color: #f4d03f;
-  text-shadow: 0 0 12px rgba(244, 208, 63, 0.6);
+  color: #d4af37;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.7);
   letter-spacing: 0.5px;
   line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .skills-grid {
@@ -213,13 +222,16 @@
 
 .skill-category h5 {
   font-size: 1.2rem;
-  font-family: 'Cinzel', serif;
-  font-weight: 500;
+  font-family: 'MedievalSharp', cursive;
+  font-weight: 400;
   margin-bottom: 1.5rem;
-  color: #e6d7a3;
-  text-shadow: 0 0 6px rgba(230, 215, 163, 0.5);
-  letter-spacing: 0.5px;
+  color: #c9aa6c;
+  text-shadow:
+    0 0 6px rgba(201, 170, 108, 0.7),
+    1px 1px 2px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
   line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .skill-tags {
@@ -229,26 +241,32 @@
 }
 
 .skill-tag {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(184, 134, 11, 0.08) 100%);
-  color: #f4d03f;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.2) 0%, rgba(101, 67, 33, 0.1) 100%);
+  color: #d4af37;
   padding: 0.8rem 1.5rem;
-  border: 1px solid #d4af37;
-  border-radius: 8px;
+  border: 2px solid #8b4513;
+  border-radius: 0;
   font-size: 0.9rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
+  font-family: 'MedievalSharp', cursive;
+  font-weight: 400;
   transition: all 0.3s ease;
-  text-shadow: 0 0 6px rgba(244, 208, 63, 0.6);
-  box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
+  text-shadow:
+    0 0 6px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .skill-tag:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(184, 134, 11, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.3) 0%, rgba(101, 67, 33, 0.2) 100%);
   color: #f4d03f;
-  text-shadow: 0 0 12px rgba(244, 208, 63, 0.7);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-  border-color: #f4d03f;
+  text-shadow:
+    0 0 10px rgba(244, 208, 63, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.6);
+  border-color: #d4af37;
 }
 
 .about-stats {
@@ -278,16 +296,24 @@
   font-family: 'Cinzel', serif;
   font-weight: 700;
   color: #d4af37;
-  text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  text-shadow:
+    0 0 15px rgba(212, 175, 55, 0.8),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .stat-label {
-  color: #daa520;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
+  color: #c9aa6c;
+  font-family: 'MedievalSharp', cursive;
+  font-weight: 400;
   font-size: 1rem;
-  text-shadow: 0 0 8px rgba(218, 165, 32, 0.4);
+  text-shadow:
+    0 0 6px rgba(201, 170, 108, 0.6),
+    1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 768px) {
@@ -325,6 +351,21 @@
 
   .section-header h2 {
     font-size: 2rem;
+  }
+}
+
+@keyframes darkSoulsGlow {
+  from {
+    text-shadow:
+      0 0 10px rgba(212, 175, 55, 0.8),
+      0 0 20px rgba(212, 175, 55, 0.6),
+      2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  to {
+    text-shadow:
+      0 0 15px rgba(212, 175, 55, 1),
+      0 0 30px rgba(212, 175, 55, 0.8),
+      3px 3px 6px rgba(0, 0, 0, 0.9);
   }
 }
 </style>
