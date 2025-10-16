@@ -3,84 +3,74 @@
     <div class="container">
       <div class="section-header">
         <h2>À propos de moi</h2>
-        <p>Découvrez mon parcours et mes compétences en développement web</p>
+        <p>Découvrez qui je suis et mes compétences en développement web</p>
       </div>
 
       <div class="about-content">
         <div class="about-text">
           <div class="about-intro">
-            <h3>Bonjour ! Je suis Jérémy</h3>
+            <h3>Créateur d'interfaces & releveur de défis</h3>
             <p>
-              Actuellement en Bachelor de Développement Web, je suis passionné par la création
-              d'expériences digitales innovantes et performantes. Mon objectif est de devenir un
-              développeur full-stack polyvalent capable de relever tous les défis techniques.
+              Passionné par le développement, je me spécialise dans la création d'interfaces
+              modernes et intuitives. Chaque nouveau projet représente pour moi un défi stimulant à
+              relever, une opportunité d'explorer de nouvelles approches et de repousser les limites
+              de la créativité technique, tout en apprenant de nouvelles technologies, methodes et
+              outils.
             </p>
             <p>
-              J'aime apprendre de nouvelles technologies et me tenir à jour avec les dernières
-              tendances du développement web. Chaque projet est pour moi une opportunité
-              d'apprentissage et d'amélioration continue.
+              J'adore concevoir des expériences utilisateur exceptionnelles en combinant esthétique
+              et fonctionnalité. Mon plaisir réside dans la résolution de problèmes complexes et la
+              transformation d'idées abstraites en interfaces concrètes et performantes.
             </p>
-          </div>
-
-          <div class="skills">
-            <h4>Mes compétences</h4>
-            <div class="skills-grid">
-              <div class="skill-category">
-                <h5>Frontend & Frameworks</h5>
-                <div class="skill-tags">
-                  <span class="skill-tag">HTML</span>
-                  <span class="skill-tag">React.js</span>
-                  <span class="skill-tag">Vue.js</span>
-                  <span class="skill-tag">Quasar</span>
-                  <span class="skill-tag">Swiper JS</span>
-                </div>
-              </div>
-
-              <div class="skill-category">
-                <h5>Backend & Bases de données</h5>
-                <div class="skill-tags">
-                  <span class="skill-tag">Python</span>
-                  <span class="skill-tag">PHP</span>
-                  <span class="skill-tag">Node.js</span>
-                  <span class="skill-tag">SQL/NoSQL</span>
-                </div>
-              </div>
-
-              <div class="skill-category">
-                <h5>Outils & Design</h5>
-                <div class="skill-tags">
-                  <span class="skill-tag">Docker</span>
-                  <span class="skill-tag">Unity</span>
-                  <span class="skill-tag">Photoshop</span>
-                  <span class="skill-tag">WordPress</span>
-                  <span class="skill-tag">Webflow</span>
-                  <span class="skill-tag">Figma</span>
-                  <span class="skill-tag">Notion</span>
-                </div>
-              </div>
-            </div>
+            <p>
+              Mon objectif ? Continuer à évoluer dans cet univers numérique fascinant, en créant des
+              solutions innovantes qui marquent les esprits et en relevant sans cesse de nouveaux
+              défis techniques.
+            </p>
           </div>
         </div>
 
-        <div class="about-stats">
-          <div class="stat-card">
-            <div class="stat-number">2+</div>
-            <div class="stat-label">Années d'études</div>
-          </div>
+        <div class="skills-section">
+          <h4>Mon Stack Technique</h4>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h5>Frontend & Frameworks</h5>
+              <div class="skill-tags">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React.js</span>
+                <span class="skill-tag">Vue.js</span>
+                <span class="skill-tag">Quasar</span>
+                <span class="skill-tag">Swiper JS</span>
+              </div>
+            </div>
 
-          <div class="stat-card">
-            <div class="stat-number">15+</div>
-            <div class="stat-label">Projets réalisés</div>
-          </div>
+            <div class="skill-category">
+              <h5>Backend & Bases de données</h5>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">NoSQL</span>
+                <span class="skill-tag">API REST</span>
+              </div>
+            </div>
 
-          <div class="stat-card">
-            <div class="stat-number">5+</div>
-            <div class="stat-label">Technologies maîtrisées</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Motivation</div>
+            <div class="skill-category">
+              <h5>Outils & Design</h5>
+              <div class="skill-tags">
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">Photoshop</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">Webflow</span>
+                <span class="skill-tag">Notion</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -88,9 +78,7 @@
   </section>
 </template>
 
-<script setup>
-// Pas de logique particulière nécessaire pour ce composant
-</script>
+<script setup></script>
 
 <style scoped>
 .about {
@@ -164,9 +152,14 @@
 
 .about-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   margin-bottom: 4rem;
+  align-items: start;
+}
+
+.about-text {
+  padding-right: 2rem;
 }
 
 .about-intro h3 {
@@ -196,15 +189,60 @@
   letter-spacing: 0.5px;
 }
 
-.skills {
-  margin-top: 3rem;
+.skills-section {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(139, 69, 19, 0.03) 100%);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-.skills h4 {
-  font-size: 1.5rem;
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="techPattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23d4af37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23techPattern)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.skills-section h4 {
+  font-size: 1.8rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #d4af37;
+  text-shadow:
+    0 0 10px rgba(212, 175, 55, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.6),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: darkSoulsGlow 4s ease-in-out infinite alternate;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.skill-category h5 {
+  font-size: 1.3rem;
   font-family: 'Cinzel', serif;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: #d4af37;
   text-shadow:
     0 0 8px rgba(212, 175, 55, 0.8),
@@ -212,141 +250,96 @@
   letter-spacing: 0.5px;
   line-height: 1.3;
   text-transform: uppercase;
-}
-
-.skills-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.skill-category h5 {
-  font-size: 1.2rem;
-  font-family: 'MedievalSharp', cursive;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-  color: #c9aa6c;
-  text-shadow:
-    0 0 6px rgba(201, 170, 108, 0.7),
-    1px 1px 2px rgba(0, 0, 0, 0.6);
-  letter-spacing: 1px;
-  line-height: 1.3;
-  text-transform: uppercase;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+  padding-bottom: 0.5rem;
 }
 
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
 .skill-tag {
-  background: linear-gradient(135deg, rgba(139, 69, 19, 0.2) 0%, rgba(101, 67, 33, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.1) 100%);
   color: #d4af37;
-  padding: 0.8rem 1.5rem;
-  border: 2px solid #8b4513;
-  border-radius: 0;
-  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  border-radius: 8px;
+  font-size: 0.85rem;
   font-family: 'MedievalSharp', cursive;
-  font-weight: 400;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  transition: all 0.4s ease;
   text-shadow:
-    0 0 6px rgba(212, 175, 55, 0.8),
+    0 0 8px rgba(212, 175, 55, 0.8),
     1px 1px 2px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.4);
+  box-shadow:
+    0 4px 12px rgba(212, 175, 55, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.skill-tag:hover::before {
+  left: 100%;
 }
 
 .skill-tag:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, rgba(139, 69, 19, 0.3) 0%, rgba(101, 67, 33, 0.2) 100%);
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.25) 0%, rgba(139, 69, 19, 0.15) 100%);
   color: #f4d03f;
   text-shadow:
-    0 0 10px rgba(244, 208, 63, 1),
+    0 0 12px rgba(244, 208, 63, 1),
     2px 2px 4px rgba(0, 0, 0, 0.8);
-  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.6);
-  border-color: #d4af37;
-}
-
-.about-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.stat-card {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%);
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+  box-shadow:
+    0 8px 25px rgba(212, 175, 55, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   border-color: #f4d03f;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  color: #d4af37;
-  text-shadow:
-    0 0 15px rgba(212, 175, 55, 0.8),
-    2px 2px 4px rgba(0, 0, 0, 0.8);
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.stat-label {
-  color: #c9aa6c;
-  font-family: 'MedievalSharp', cursive;
-  font-weight: 400;
-  font-size: 1rem;
-  text-shadow:
-    0 0 6px rgba(201, 170, 108, 0.6),
-    1px 1px 2px rgba(0, 0, 0, 0.5);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 @media (max-width: 768px) {
   .about-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
+    padding: 0 20px;
   }
 
-  .about-stats {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+  .about-text {
+    padding-right: 0;
   }
 
-  .stat-card {
-    padding: 1.5rem;
-  }
-
-  .stat-number {
-    font-size: 2rem;
-  }
-
-  .education {
+  .skills-section {
     padding: 2rem;
   }
 
-  .education-item {
-    flex-direction: column;
-    gap: 1rem;
+  .skills-section h4 {
+    font-size: 1.5rem;
   }
 
-  .education-year {
-    min-width: auto;
-    text-align: left;
+  .skill-category h5 {
+    font-size: 1.1rem;
+  }
+
+  .skill-tags {
+    gap: 0.6rem;
+  }
+
+  .skill-tag {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 
   .section-header h2 {

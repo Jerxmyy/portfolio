@@ -2,7 +2,7 @@
   <header class="header" :class="{ 'header-scrolled': isScrolled }">
     <div class="container">
       <div class="logo">
-        <h3>Jérémy</h3>
+        <img src="/logo-sans-fond.png" alt="Jérémy" class="logo-img" />
       </div>
 
       <nav class="nav" :class="{ 'nav-open': isMobileMenuOpen }">
@@ -128,23 +128,23 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 120px;
   box-sizing: border-box;
 }
 
-.logo h3 {
-  font-size: 1.8rem;
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  color: #d4af37;
-  text-shadow:
-    0 0 10px rgba(212, 175, 55, 0.8),
-    2px 2px 4px rgba(0, 0, 0, 0.8);
-  margin: 0;
+.logo-img {
+  height: 120px;
+  width: auto;
+  max-width: 360px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.8));
+  transition: all 0.4s ease;
   animation: darkSoulsPulse 4s ease-in-out infinite alternate;
-  letter-spacing: 1px;
-  line-height: 1.2;
-  text-transform: uppercase;
+}
+
+.logo-img:hover {
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 1)) drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
+  transform: scale(1.05);
 }
 
 @keyframes darkSoulsPulse {
@@ -249,13 +249,18 @@ onUnmounted(() => {
 }
 
 @media (max-width: 768px) {
+  .logo-img {
+    height: 60px;
+    max-width: 250px;
+  }
+
   .mobile-menu-btn {
     display: flex;
   }
 
   .nav {
     position: fixed;
-    top: 70px;
+    top: 120px;
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.98);
