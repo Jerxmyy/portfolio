@@ -37,11 +37,46 @@
                   </svg>
                   Voir le projet
                 </a>
+
+                <!-- Layout spécial pour Musée Explorer -->
+                <div
+                  v-if="project.id === 4 && (project.github || project.githubBackend)"
+                  class="project-links-row"
+                >
+                  <a
+                    :href="project.github"
+                    target="_blank"
+                    class="project-link project-link-small"
+                    v-if="project.github"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                    Frontend
+                  </a>
+                  <a
+                    :href="project.githubBackend"
+                    target="_blank"
+                    class="project-link project-link-small"
+                    v-if="project.githubBackend"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                    Backend
+                  </a>
+                </div>
+
+                <!-- Layout normal pour les autres projets -->
                 <a
                   :href="project.github"
                   target="_blank"
                   class="project-link"
-                  v-if="project.github"
+                  v-if="project.github && project.id !== 4"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path
@@ -122,7 +157,15 @@
               target="_blank"
               class="btn btn-secondary"
             >
-              Code source
+              {{ selectedProject.githubBackend ? 'Frontend' : 'Code source' }}
+            </a>
+            <a
+              v-if="selectedProject.githubBackend"
+              :href="selectedProject.githubBackend"
+              target="_blank"
+              class="btn btn-secondary"
+            >
+              Backend
             </a>
           </div>
         </div>
@@ -137,7 +180,7 @@ import { ref, computed } from 'vue'
 const activeCategory = ref('Tous')
 const selectedProject = ref(null)
 
-const categories = ['Tous', 'Frontend', 'Full-stack', 'Mobile']
+const categories = ['Tous', 'Frontend', 'Full-stack', 'Backend']
 
 const projects = [
   {
@@ -154,8 +197,8 @@ const projects = [
     title: 'Food Truck Holly Thai',
     description:
       "Site web pour un food truck thaïlandais dans le cadre d'un projet étudiant réalisé a l'ESD Paris",
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop',
-    category: 'Full-stack',
+    image: 'image-projet/logo-holly-thai.jpg',
+    category: 'Backend',
     technologies: ['PHP', 'HTML5', 'CSS3'],
     demo: 'https://jchambon.esd-monsite.fr/restau_thai/',
   },
@@ -164,8 +207,8 @@ const projects = [
     title: 'PixelBay',
     description:
       "Site factice d'achats de jeux vidéos dématérialisés réalisé dans le cadre d'un projet étudiant à l'ESD Paris, inspiré du Site Instant Gaming",
-    image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop',
-    category: 'Frontend',
+    image: 'image-projet/illustration-pixelbay.jpg',
+    category: 'Full-stack',
     technologies: ['JavaScript', 'CSS3', 'HTML5', 'Supabase'],
     demo: 'https://projet-fullstack-eta.vercel.app/',
     github: 'https://github.com/Jerxmyy/projet-fullstack',
@@ -183,19 +226,23 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Gestion de Tâches',
-    description: 'Application de gestion de tâches avec équipes et notifications.',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop',
+    title: 'Musée Explorer',
+    description: "Workshop API utilisant l'API Open Data du Ministère de la culture",
+    image: 'image-projet/logo-musee-explorer.png',
     category: 'Full-stack',
-    technologies: ['Vue.js', 'Node.js', 'Socket.io', 'MySQL'],
-    demo: '#',
-    github: '#',
+    technologies: ['Vue.js', 'Node.js', 'Python', 'Supabase'],
+    demo: 'https://workshop-musee.vercel.app',
+    github: 'https://github.com/Jerxmyy/workshop_musee',
+    githubBackend: 'https://github.com/Jerxmyy/workshop_musee_backend',
     features: [
-      'Gestion des tâches par équipe',
-      'Notifications en temps réel',
-      'Système de priorités',
-      'Historique des activités',
-      'Interface collaborative',
+      'Découverte des musées français',
+      'Recherche avancée par critères',
+      'Système de filtrage dynamique',
+      'Interface responsive et moderne',
+      'Exploration interactive des collections',
+      'Géolocalisation des musées',
+      'Informations détaillées sur chaque musée',
+      'Interface utilisateur intuitive',
     ],
   },
 ]
@@ -336,7 +383,7 @@ const closeProjectModal = () => {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
@@ -380,15 +427,16 @@ const closeProjectModal = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(101, 67, 33, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.98) 0%, rgba(101, 67, 33, 0.95) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   text-align: center;
+  backdrop-filter: blur(3px);
 }
 
 .project-card:hover .project-overlay {
@@ -396,25 +444,35 @@ const closeProjectModal = () => {
 }
 
 .overlay-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: 'Cinzel', serif;
   font-weight: 700;
   color: #d4af37;
   text-shadow:
-    0 0 10px rgba(212, 175, 55, 0.8),
-    2px 2px 4px rgba(0, 0, 0, 0.8);
+    0 0 15px rgba(212, 175, 55, 1),
+    0 0 25px rgba(212, 175, 55, 0.8),
+    2px 2px 4px rgba(0, 0, 0, 0.9);
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1.2;
+  z-index: 10;
+  position: relative;
 }
 
 .project-links {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.8rem;
   width: 100%;
-  max-width: 250px;
+  max-width: 280px;
+}
+
+.project-links-row {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  width: 100%;
 }
 
 .project-link {
@@ -422,22 +480,31 @@ const closeProjectModal = () => {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(135deg, rgba(139, 69, 19, 0.3) 0%, rgba(101, 67, 33, 0.2) 100%);
+  padding: 0.8rem 1.2rem;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.4) 0%, rgba(101, 67, 33, 0.3) 100%);
   color: #d4af37;
   text-decoration: none;
   border-radius: 0;
   font-family: 'MedievalSharp', cursive;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   transition: all 0.3s ease;
   border: 2px solid #8b4513;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   text-shadow:
-    0 0 6px rgba(212, 175, 55, 0.8),
-    1px 1px 2px rgba(0, 0, 0, 0.6);
+    0 0 8px rgba(212, 175, 55, 0.9),
+    1px 1px 3px rgba(0, 0, 0, 0.8);
   width: 100%;
+  backdrop-filter: blur(5px);
+}
+
+.project-link-small {
+  padding: 0.6rem 1rem;
+  font-size: 0.75rem;
+  min-width: 80px;
+  flex: 1;
+  max-width: 120px;
 }
 
 .project-link:hover {
@@ -530,35 +597,54 @@ const closeProjectModal = () => {
 }
 
 .modal-content {
-  background: white;
+  background: linear-gradient(135deg, rgba(12, 12, 12, 0.95) 0%, rgba(26, 26, 26, 0.9) 100%);
+  border: 2px solid #d4af37;
   border-radius: 20px;
   max-width: 800px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(212, 175, 55, 0.3);
 }
 
 .modal-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(0, 0, 0, 0.1);
-  border: none;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.3) 0%, rgba(101, 67, 33, 0.2) 100%);
+  border: 2px solid #8b4513;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  color: #c9aa6c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .modal-close:hover {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(184, 134, 11, 0.1) 100%);
-  color: #f4d03f;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(184, 134, 11, 0.2) 100%);
+  color: #d4af37;
+  border-color: #d4af37;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.5);
+}
+
+.modal-close svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover svg {
+  transform: rotate(90deg);
 }
 
 .modal-image {
@@ -581,16 +667,26 @@ const closeProjectModal = () => {
   font-family: 'Cinzel', serif;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #f4d03f;
-  text-shadow: 0 0 10px rgba(244, 208, 63, 0.6);
+  color: #d4af37;
+  text-shadow:
+    0 0 10px rgba(212, 175, 55, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.6),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .modal-description {
   font-size: 1.1rem;
-  color: #e6d7a3;
+  color: #c9aa6c;
   line-height: 1.6;
   margin-bottom: 2rem;
-  text-shadow: 0 0 6px rgba(230, 215, 163, 0.4);
+  text-shadow:
+    0 0 6px rgba(201, 170, 108, 0.7),
+    1px 1px 2px rgba(0, 0, 0, 0.6);
+  font-family: 'MedievalSharp', cursive;
+  font-style: italic;
+  letter-spacing: 0.5px;
 }
 
 .modal-section {
@@ -602,8 +698,12 @@ const closeProjectModal = () => {
   font-family: 'Cinzel', serif;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #f4d03f;
-  text-shadow: 0 0 8px rgba(244, 208, 63, 0.6);
+  color: #d4af37;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .tech-tags {
@@ -618,13 +718,17 @@ const closeProjectModal = () => {
 }
 
 .features-list li {
-  color: #e6d7a3;
+  color: #c9aa6c;
   margin-bottom: 0.8rem;
   position: relative;
   padding-left: 2rem;
   font-size: 1rem;
-  text-shadow: 0 0 6px rgba(230, 215, 163, 0.4);
+  text-shadow:
+    0 0 6px rgba(201, 170, 108, 0.7),
+    1px 1px 2px rgba(0, 0, 0, 0.6);
   line-height: 1.5;
+  font-family: 'MedievalSharp', cursive;
+  letter-spacing: 0.3px;
 }
 
 .features-list li::before {
@@ -633,13 +737,89 @@ const closeProjectModal = () => {
   left: 0;
   color: #d4af37;
   font-weight: bold;
-  text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.6);
+  font-size: 1.1rem;
 }
 
 .modal-actions {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #8b4513;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.4) 0%, rgba(101, 67, 33, 0.3) 100%);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'MedievalSharp', cursive;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #d4af37;
+  text-decoration: none;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.9),
+    1px 1px 3px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  backdrop-filter: blur(5px);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
+  color: #f4d03f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.5);
+  text-shadow:
+    0 0 10px rgba(244, 208, 63, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  border-color: #d4af37;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.4) 0%, rgba(101, 67, 33, 0.3) 100%);
+  color: #d4af37;
+  border-color: #8b4513;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.9),
+    1px 1px 3px rgba(0, 0, 0, 0.8);
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
+  color: #f4d03f;
+  border-color: #d4af37;
+  text-shadow:
+    0 0 10px rgba(244, 208, 63, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.5);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.4) 0%, rgba(101, 67, 33, 0.3) 100%);
+  color: #d4af37;
+  border-color: #8b4513;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.9),
+    1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
+  color: #f4d03f;
+  border-color: #d4af37;
+  text-shadow:
+    0 0 10px rgba(244, 208, 63, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 768px) {
@@ -654,6 +834,36 @@ const closeProjectModal = () => {
   .filter-btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+  }
+
+  .project-overlay {
+    padding: 1.5rem 1rem;
+  }
+
+  .overlay-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .project-links {
+    gap: 0.6rem;
+    max-width: 100%;
+  }
+
+  .project-links-row {
+    gap: 0.4rem;
+  }
+
+  .project-link {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .project-link-small {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.7rem;
+    min-width: 70px;
+    max-width: 100px;
   }
 
   .modal-overlay {
