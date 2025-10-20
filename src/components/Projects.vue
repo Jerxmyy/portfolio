@@ -187,7 +187,7 @@ const projects = [
     id: 1,
     title: 'Hub Gaming Pop Corn 2024',
     description: "Hub des jeux Pop Corn réalisé dans le cadre du Digital Event 2024 à l'ESD Paris",
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
+    image: 'image-projet/hub-gaming-pop-corn-2024.png',
     category: 'Frontend',
     technologies: ['HTML5', 'CSS3', 'JavaScript'],
     demo: 'https://jchambon.esd-monsite.fr/hub-gaming-pop-corn-2024',
@@ -196,7 +196,7 @@ const projects = [
     id: 2,
     title: 'Food Truck Holly Thai',
     description:
-      "Site web pour un food truck thaïlandais dans le cadre d'un projet étudiant réalisé a l'ESD Paris",
+      "Site factice pour un food truck thaïlandais dans le cadre d'un projet étudiant réalisé a l'ESD Paris",
     image: 'image-projet/logo-holly-thai.jpg',
     category: 'Backend',
     technologies: ['PHP', 'HTML5', 'CSS3'],
@@ -383,7 +383,7 @@ const closeProjectModal = () => {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
