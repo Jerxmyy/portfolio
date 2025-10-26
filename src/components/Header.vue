@@ -248,28 +248,77 @@ onUnmounted(() => {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* Breakpoints responsives */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .nav-list {
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 0 25px;
+  }
+
+  .logo-img {
+    height: 80px;
+    max-width: 300px;
+  }
+
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+    height: 80px;
+  }
+
   .logo-img {
     height: 60px;
-    max-width: 250px;
+    max-width: 200px;
   }
 
   .mobile-menu-btn {
     display: flex;
+    z-index: 1001;
+  }
+
+  .mobile-menu-btn span {
+    background: #d4af37;
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
   }
 
   .nav {
     position: fixed;
-    top: 120px;
+    top: 80px;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(12, 12, 12, 0.98);
+    backdrop-filter: blur(15px);
+    border-bottom: 2px solid #d4af37;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
   }
 
   .nav-open {
@@ -280,18 +329,51 @@ onUnmounted(() => {
 
   .nav-list {
     flex-direction: column;
-    padding: 2rem;
-    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    gap: 0;
   }
 
   .nav-link {
     font-size: 1.1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    text-align: center;
+    width: 100%;
+    display: block;
   }
 
   .nav-link:last-child {
     border-bottom: none;
+  }
+
+  .nav-link:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+    height: 70px;
+  }
+
+  .logo-img {
+    height: 50px;
+    max-width: 150px;
+  }
+
+  .nav {
+    top: 70px;
+  }
+
+  .nav-list {
+    padding: 1.5rem 1rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 1rem 0;
   }
 }
 </style>

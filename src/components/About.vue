@@ -310,15 +310,69 @@
   border-color: #f4d03f;
 }
 
+/* Breakpoints responsives */
+@media (max-width: 1200px) {
+  .about {
+    padding: 80px 30px;
+  }
+
+  .about-content {
+    gap: 3.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .about {
+    padding: 70px 25px;
+  }
+
+  .about-content {
+    gap: 3rem;
+  }
+
+  .about-intro h3 {
+    font-size: 1.4rem;
+  }
+
+  .about-intro p {
+    font-size: 1.1rem;
+  }
+
+  .skills-section h4 {
+    font-size: 1.6rem;
+  }
+
+  .skill-category h5 {
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .about {
+    padding: 60px 20px;
+  }
+
   .about-content {
     grid-template-columns: 1fr;
-    gap: 3rem;
-    padding: 0 20px;
+    gap: 2.5rem;
   }
 
   .about-text {
     padding-right: 0;
+  }
+
+  .about-intro h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-intro p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .skills-section {
@@ -326,11 +380,13 @@
   }
 
   .skills-section h4 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
   }
 
   .skill-category h5 {
     font-size: 1.1rem;
+    margin-bottom: 1.2rem;
   }
 
   .skill-tags {
@@ -343,7 +399,55 @@
   }
 
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 50px 15px;
+  }
+
+  .about-content {
+    gap: 2rem;
+  }
+
+  .about-intro h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-intro p {
+    font-size: 0.95rem;
+  }
+
+  .skills-section {
+    padding: 1.5rem;
+  }
+
+  .skills-section h4 {
+    font-size: 1.2rem;
+  }
+
+  .skill-category h5 {
+    font-size: 1rem;
+  }
+
+  .skill-tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
   }
 }
 

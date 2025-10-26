@@ -240,6 +240,31 @@ section {
   margin: 0;
 }
 
+/* Ajustements globaux pour le responsive */
+@media (max-width: 1200px) {
+  section {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 992px) {
+  section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 40px 0;
+  }
+}
+
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -567,25 +592,177 @@ section {
   text-shadow: 0 0 6px rgba(205, 133, 63, 0.5);
 }
 
+/* Breakpoints responsives */
+@media (max-width: 1200px) {
+  .hero {
+    gap: 60px;
+    padding: 100px 30px 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .code-animation {
+    font-size: 0.95rem;
+    padding: 35px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    gap: 50px;
+    padding: 90px 25px 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .code-animation {
+    font-size: 0.9rem;
+    padding: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
     padding: 100px 20px 60px;
+    min-height: auto;
   }
 
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
 
   .hero-buttons {
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 15px 30px;
+    font-size: 1rem;
   }
 
   .code-animation {
+    font-size: 0.85rem;
+    padding: 25px;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 15px 50px;
+    gap: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 12px 25px;
     font-size: 0.9rem;
+    min-width: 200px;
+  }
+
+  .code-animation {
+    font-size: 0.8rem;
     padding: 20px;
+  }
+
+  .code-line {
+    margin-bottom: 8px;
+  }
+
+  .code-line.indent {
+    padding-left: 20px;
+  }
+}
+
+/* Ajustements pour les très petits écrans */
+@media (max-width: 360px) {
+  .hero {
+    padding: 70px 10px 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    min-width: 180px;
+  }
+
+  .code-animation {
+    font-size: 0.75rem;
+    padding: 15px;
+  }
+}
+
+/* Ajustements pour les tablettes en mode paysage */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .hero {
+    padding: 60px 30px 50px;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.05rem;
   }
 }
 </style>

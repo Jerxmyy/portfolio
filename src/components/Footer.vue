@@ -279,7 +279,51 @@ const scrollToSection = (sectionId) => {
   font-size: 0.9rem;
 }
 
+/* Breakpoints responsives */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .footer-content {
+    gap: 2.5rem;
+  }
+
+  .footer-logo-img {
+    height: 100px;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 0 25px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-logo-img {
+    height: 80px;
+    max-width: 160px;
+  }
+
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-section p {
+    font-size: 0.95rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
   .footer-content {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -291,21 +335,105 @@ const scrollToSection = (sectionId) => {
   }
 
   .footer-logo-img {
-    height: 50px;
-    max-width: 180px;
+    height: 60px;
+    max-width: 150px;
+  }
+
+  .footer-section h4 {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-section p {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
   }
 
   .social-links {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+
+  .contact-info p {
+    font-size: 0.85rem;
     justify-content: center;
   }
 
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
+    gap: 0.5rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.85rem;
   }
 
   .footer {
     padding: 2rem 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .footer-content {
+    gap: 1.5rem;
+  }
+
+  .footer-logo-img {
+    height: 50px;
+    max-width: 120px;
+  }
+
+  .footer-section h4 {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    gap: 0.6rem;
+  }
+
+  .social-link {
+    width: 35px;
+    height: 35px;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+  }
+
+  .contact-info p {
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    padding: 1.5rem 0 0;
   }
 }
 </style>
