@@ -168,15 +168,34 @@
 </template>
 
 <script setup>
+defineOptions({
+  name: 'ContactSection',
+})
+
 import { ref, reactive } from 'vue'
 import emailjs from '@emailjs/browser'
 
 // Configuration EmailJS
-// Remplacez ces valeurs par vos propres clés EmailJS
-// Vous pouvez les mettre dans un fichier .env avec le préfixe VITE_
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID'
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID'
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
+// Les variables d'environnement doivent être définies dans le fichier .env avec le préfixe VITE_
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+const EMAILJS_TO_EMAIL = import.meta.env.VITE_EMAILJS_TO_EMAIL
+
+// Validation des variables d'environnement
+const validateEnvVars = () => {
+  const missingVars = []
+  if (!EMAILJS_SERVICE_ID) missingVars.push('VITE_EMAILJS_SERVICE_ID')
+  if (!EMAILJS_TEMPLATE_ID) missingVars.push('VITE_EMAILJS_TEMPLATE_ID')
+  if (!EMAILJS_PUBLIC_KEY) missingVars.push('VITE_EMAILJS_PUBLIC_KEY')
+  if (!EMAILJS_TO_EMAIL) missingVars.push('VITE_EMAILJS_TO_EMAIL')
+
+  if (missingVars.length > 0) {
+    console.error("Variables d'environnement manquantes:", missingVars.join(', '))
+    return false
+  }
+  return true
+}
 
 const form = reactive({
   name: '',
@@ -237,6 +256,16 @@ const submitForm = async () => {
     return
   }
 
+  // Vérifier que les variables d'environnement sont définies
+  if (!validateEnvVars()) {
+    submitStatus.value = {
+      type: 'error',
+      message:
+        "Erreur de configuration : les variables d'environnement EmailJS ne sont pas définies. Veuillez contacter l'administrateur.",
+    }
+    return
+  }
+
   isSubmitting.value = true
   submitStatus.value = null
 
@@ -250,7 +279,7 @@ const submitForm = async () => {
       from_email: form.email,
       subject: form.subject,
       message: form.message,
-      to_email: 'jeremy.chambon@mail-esd.com', // Votre email de réception
+      to_email: EMAILJS_TO_EMAIL,
     }
 
     // Envoyer l'email via EmailJS
