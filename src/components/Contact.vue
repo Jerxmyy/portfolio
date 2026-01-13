@@ -181,7 +181,6 @@ import emailjs from '@emailjs/browser'
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-const EMAILJS_TO_EMAIL = import.meta.env.VITE_EMAILJS_TO_EMAIL
 
 // Validation des variables d'environnement
 const validateEnvVars = () => {
@@ -189,7 +188,6 @@ const validateEnvVars = () => {
   if (!EMAILJS_SERVICE_ID) missingVars.push('VITE_EMAILJS_SERVICE_ID')
   if (!EMAILJS_TEMPLATE_ID) missingVars.push('VITE_EMAILJS_TEMPLATE_ID')
   if (!EMAILJS_PUBLIC_KEY) missingVars.push('VITE_EMAILJS_PUBLIC_KEY')
-  if (!EMAILJS_TO_EMAIL) missingVars.push('VITE_EMAILJS_TO_EMAIL')
 
   if (missingVars.length > 0) {
     console.error("Variables d'environnement manquantes:", missingVars.join(', '))
@@ -280,7 +278,7 @@ const submitForm = async () => {
       from_email: form.email,
       subject: form.subject,
       message: form.message,
-      to_email: EMAILJS_TO_EMAIL,
+      to_email: 'jeremy.chambon@mail-esd.com',
     }
 
     // Envoyer l'email via EmailJS
