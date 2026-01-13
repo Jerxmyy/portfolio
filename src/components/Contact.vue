@@ -168,6 +168,7 @@
 </template>
 
 <script setup>
+// petit test pour voir si le contact fonctionne
 defineOptions({
   name: 'ContactSection',
 })
