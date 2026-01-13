@@ -31,6 +31,7 @@ Ce portfolio est conçu pour mettre en valeur mes compétences en tant que déve
 
 - **ESLint** - Linter pour maintenir la qualité du code
 - **Prettier** - Formatage automatique du code
+- **EmailJS** - Service d'envoi d'emails depuis le frontend
 
 ## 📁 Structure du projet
 
@@ -110,6 +111,61 @@ npm run lint
 npm run format
 ```
 
+## ⚙️ Configuration EmailJS
+
+Le formulaire de contact utilise **EmailJS** pour envoyer des emails directement depuis le frontend. Pour activer cette fonctionnalité :
+
+### 1. Créer un compte EmailJS
+
+1. Allez sur [https://www.emailjs.com/](https://www.emailjs.com/)
+2. Créez un compte gratuit (200 emails/mois)
+
+### 2. Configurer un service email
+
+1. Dans le dashboard EmailJS, allez dans **Email Services**
+2. Ajoutez un service (Gmail, Outlook, etc.)
+3. Notez le **Service ID**
+
+### 3. Créer un template d'email
+
+1. Allez dans **Email Templates**
+2. Créez un nouveau template avec les variables suivantes :
+   - `{{from_name}}` - Nom de l'expéditeur
+   - `{{from_email}}` - Email de l'expéditeur
+   - `{{subject}}` - Sujet du message
+   - `{{message}}` - Contenu du message
+   - `{{to_email}}` - Votre email de réception
+3. Notez le **Template ID**
+
+### 4. Récupérer la clé publique
+
+1. Allez dans **Account** > **General**
+2. Copiez votre **Public Key**
+
+### 5. Configurer les variables d'environnement
+
+Créez un fichier `.env` à la racine du projet :
+
+```env
+VITE_EMAILJS_SERVICE_ID=votre_service_id
+VITE_EMAILJS_TEMPLATE_ID=votre_template_id
+VITE_EMAILJS_PUBLIC_KEY=votre_public_key
+```
+
+**Note** : Les variables d'environnement dans Vite doivent commencer par `VITE_` pour être accessibles dans le code client.
+
+### Alternative : Configuration directe
+
+Si vous préférez ne pas utiliser de variables d'environnement, vous pouvez modifier directement les valeurs dans `src/components/Contact.vue` :
+
+```javascript
+const EMAILJS_SERVICE_ID = 'votre_service_id'
+const EMAILJS_TEMPLATE_ID = 'votre_template_id'
+const EMAILJS_PUBLIC_KEY = 'votre_public_key'
+```
+
+⚠️ **Attention** : Ne commitez jamais vos clés API dans le dépôt Git si vous utilisez la configuration directe. Utilisez plutôt les variables d'environnement.
+
 ## 📱 Sections du site
 
 ### 🏠 Accueil (Hero)
@@ -147,9 +203,10 @@ npm run format
 ### 📧 Contact
 
 - Formulaire de contact avec validation
+- **Envoi d'email en temps réel** via EmailJS
 - Informations de contact (email, téléphone, localisation)
 - Liens vers réseaux sociaux (GitHub, LinkedIn)
-- Feedback visuel lors de l'envoi
+- Feedback visuel lors de l'envoi (succès/erreur)
 
 ## 🎨 Design
 

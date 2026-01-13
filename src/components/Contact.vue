@@ -169,6 +169,14 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+import emailjs from '@emailjs/browser'
+
+// Configuration EmailJS
+// Remplacez ces valeurs par vos propres clés EmailJS
+// Vous pouvez les mettre dans un fichier .env avec le préfixe VITE_
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID'
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID'
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
 
 const form = reactive({
   name: '',
@@ -233,11 +241,20 @@ const submitForm = async () => {
   submitStatus.value = null
 
   try {
-    // Simulation d'envoi d'email
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    // Initialiser EmailJS avec la clé publique
+    emailjs.init(EMAILJS_PUBLIC_KEY)
 
-    // Ici, vous pourriez intégrer un service comme EmailJS, Formspree, ou votre propre API
-    console.log('Formulaire soumis:', form)
+    // Préparer les paramètres du template
+    const templateParams = {
+      from_name: form.name,
+      from_email: form.email,
+      subject: form.subject,
+      message: form.message,
+      to_email: 'jeremy.chambon@mail-esd.com', // Votre email de réception
+    }
+
+    // Envoyer l'email via EmailJS
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
 
     submitStatus.value = {
       type: 'success',
@@ -249,9 +266,10 @@ const submitForm = async () => {
       form[key] = ''
     })
   } catch (error) {
+    console.error('Erreur EmailJS:', error)
     submitStatus.value = {
       type: 'error',
-      message: "Erreur lors de l'envoi du message. Veuillez réessayer.",
+      message: "Erreur lors de l'envoi du message. Veuillez vérifier votre connexion et réessayer.",
     }
   } finally {
     isSubmitting.value = false
