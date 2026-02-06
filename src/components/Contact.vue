@@ -191,6 +191,11 @@ const validateEnvVars = () => {
 
   if (missingVars.length > 0) {
     console.error("Variables d'environnement manquantes:", missingVars.join(', '))
+    console.error('Mode:', import.meta.env.MODE)
+    console.error(
+      'Variables disponibles:',
+      Object.keys(import.meta.env).filter((key) => key.startsWith('VITE_')),
+    )
     return false
   }
   return true
@@ -278,7 +283,6 @@ const submitForm = async () => {
       from_email: form.email,
       subject: form.subject,
       message: form.message,
-      to_email: 'jeremy.chambon@mail-esd.com',
     }
 
     // Envoyer l'email via EmailJS
