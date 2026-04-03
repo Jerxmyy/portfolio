@@ -245,6 +245,17 @@ const projects = [
       'Interface utilisateur intuitive',
     ],
   },
+  {
+    id: 4,
+    title: 'ExPRES',
+    description:
+      'ExPRES (Exoplanetary and Planetary Radio Emission Simulator) is a versatile tool that computes the observation opportunities of planetary',
+    image: 'image-projet/logo-obspm.png',
+    category: 'Frontend',
+    technologies: ['Quasar.js', 'Vue.js', 'JavaScript'],
+    demo: 'https://expres.obspm.fr/',
+    features: ["Calcul d'ephéméride"],
+  },
 ]
 
 const filteredProjects = computed(() => {
